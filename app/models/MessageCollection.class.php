@@ -26,7 +26,7 @@ class MessageCollection
     {
         global $comments;
 
-        $filename = $_SERVER['DOCUMENT_ROOT'] . '/guestbook/data/data.txt';
+        $filename = APP_PATH . '/data/data.txt';
         $ar_comments = self::get_comments_from_file($filename);
         return array_merge($comments, $ar_comments);
     }
@@ -47,7 +47,7 @@ class MessageCollection
 
     function save_comment($comment)
     {
-        $filename = $_SERVER['DOCUMENT_ROOT'] . '/guestbook/data/data.txt';
+        $filename = APP_PATH . '/data/data.txt';
         $comments = self::get_comments_from_file($filename);
         $comments[] = array(
             'author' => htmlspecialchars($comment['author']),

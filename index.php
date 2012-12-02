@@ -1,4 +1,6 @@
 <?php
+define('APP_WEB_PATH', '/guestbook');
+define('APP_PATH', $_SERVER['DOCUMENT_ROOT'] . APP_WEB_PATH);
 include 'data/data.php';
 
 function my_autoloader($class) {

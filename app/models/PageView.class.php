@@ -1,5 +1,5 @@
 <?php
-require_once '../config/configs.php';
+require_once dirname(__FILE__) . '/../config/configs.php';
 
 /**
  */
