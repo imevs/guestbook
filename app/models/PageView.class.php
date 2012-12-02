@@ -1,5 +1,5 @@
 <?php
-require_once 'configs.php';
+require_once '../config/configs.php';
 
 /**
  */
