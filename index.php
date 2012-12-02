@@ -2,7 +2,7 @@
 include 'data/data.php';
 
 function my_autoloader($class) {
-    include 'models/' . $class . '.class.php';
+    include 'app/models/' . $class . '.class.php';
 }
 spl_autoload_register('my_autoloader');
 

@@ -1,7 +1,7 @@
 <?php
 $css = array(
     'http://twitter.github.com/bootstrap/assets/css/bootstrap.css',
-    'styles/main.css'
+    'web/styles/main.css'
 );
 
 $js_scripts = array(

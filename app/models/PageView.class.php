@@ -49,7 +49,7 @@ JS;
 
     public function render($template, $data = array())
     {
-        $file = 'views/' . $template . '.php';
+        $file = 'app/views/' . $template . '.php';
         return $this->renderFile($file, $data);
     }
 
@@ -83,7 +83,7 @@ ERROR;
 
     function renderBody($params)
     {
-        $file = 'actions/' . $this->getCurrentAction() . '.php';
+        $file = 'app/actions/' . $this->getCurrentAction() . '.php';
         return $this->renderFile($file, $params);
     }
 
