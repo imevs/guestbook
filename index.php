@@ -1,9 +1,10 @@
 <?php
 include 'data/data.php';
-include 'code/user.php';
-include 'code/functions.php';
-include 'code/comments_functions.php';
 
-$data = array('title' => $title);
+function my_autoloader($class) {
+    include 'code/' . $class . '.class.php';
+}
+spl_autoload_register('my_autoloader');
 
-echo render('layout', $data);
+$pageView = PageView::getInstance();
+echo $pageView->renderPage();

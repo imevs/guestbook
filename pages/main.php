@@ -1,9 +1,8 @@
 <?php
-
-$errors = process_comments();
+$errors = MessageCollection::process_comments();
 
 $data = array(
-    'comments' => get_comments(),
+    'comments' => MessageCollection::get_comments(),
     'errors' => $errors,
 );
 

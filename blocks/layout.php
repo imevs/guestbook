@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title><?= $title?></title>
-    <? outputCSS() ?>
-    <? outputJS() ?>
+    <?= output_css() ?>
+    <?= output_js() ?>
 </head>
 <body>
     <?= render ('header'); ?>
     <div class="container">
-        <?= renderBody($data); ?>
+        <?= render_body($data); ?>
         <?= render('footer'); ?>
     </div>
 </body>

@@ -1,4 +1,4 @@
-<? if (!isAuthenticated()): ?>
+<? if (!$gb_user->isAuthenticated()): ?>
     <form class="navbar-form pull-right" action="index.php?action=login" method="post">
         <input class="span2" type="text" placeholder="Login" name="username">
         <input class="span2" type="password" placeholder="Password" name="password">
