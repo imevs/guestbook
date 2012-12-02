@@ -1,1 +1,5 @@
-This file was created by JetBrains PhpStorm 5.0.4 for binding GitHub repository
+=TODO=:
+
+* unit tests
+* message model
+* message collection make non static
