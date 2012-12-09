@@ -7,7 +7,7 @@ class MessageCollection
      * @param $filename
      * @return array
      */
-    function get_comments_from_file($filename)
+    public static function get_comments_from_file($filename)
     {
         $comments = array();
         if (file_exists($filename)) {
@@ -43,7 +43,7 @@ class MessageCollection
         return array_merge($comments, $ar_comments);
     }
 
-    function isCommentSended()
+    public static function isCommentSended()
     {
         return isset($_REQUEST['comment_author']);
     }

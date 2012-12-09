@@ -73,7 +73,7 @@ ERROR;
 
     function getCurrentAction()
     {
-        $action = $_GET['action'];
+        $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
         $actions = array('main', 'about', 'edit', 'logout', 'login');
 
         return isset($action)

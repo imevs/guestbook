@@ -10,9 +10,14 @@ class User
         )
     );
 
-    public function __construct()
+    public static function init()
     {
         session_start();
+    }
+
+    public function __construct()
+    {
+
     }
 
     function isAuthenticated()
@@ -61,3 +66,5 @@ class User
     }
 
 }
+
+User::init();
