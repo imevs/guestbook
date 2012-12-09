@@ -22,6 +22,18 @@ class MessageCollection
         return $comments;
     }
 
+    public function getCommentsFromSqlite()
+    {
+        $db_filename = 'data.sqlite';
+        $db = new PDO('sqlite:'. $db_filename);
+
+        $stmt = $db->prepare('select * from messages');
+        $stmt->execute();
+        $stmt->bindColumn(1, $type, PDO::PARAM_STR, 256);
+        $stmt->bindColumn(2, $lob, PDO::PARAM_LOB);
+        $stmt->fetch(PDO::FETCH_BOUND);
+    }
+
     public static function get_comments()
     {
         global $comments;
@@ -75,5 +87,17 @@ class MessageCollection
             }
         }
         return '';
+    }
+
+    private $messages = array();
+
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    public function add(Message $item)
+    {
+        $this->messages[] = $item;
     }
 }

@@ -1,8 +1,5 @@
 <?php
-session_start();
 
-/**
- */
 class User
 {
     public static $users = array(
@@ -15,6 +12,7 @@ class User
 
     public function __construct()
     {
+        session_start();
     }
 
     function isAuthenticated()
@@ -48,8 +46,13 @@ class User
 
     function checkPassword($login, $password)
     {
-        $arr = array('login' => $login, 'password' => $password);
-        return array_search($arr, self::$users) !== false;
+        $stmt = DB::getInstance()->getConnection()->prepare('select count(*) from users where username = :username and password = :password');
+        $stmt->bindValue('username', $login);
+        $stmt->bindValue('password', $password);
+
+        $stmt->execute();
+        $all = $stmt->fetchAll();
+        return $all[0][0] >= 1;
     }
 
     public static function getCurrentUser()
