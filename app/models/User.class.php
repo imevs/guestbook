@@ -5,8 +5,7 @@ session_start();
  */
 class User
 {
-
-    public $users = array(
+    public static $users = array(
         array(
             'login' => 'admin',
             'password' => 'password',
@@ -16,7 +15,6 @@ class User
 
     public function __construct()
     {
-
     }
 
     function isAuthenticated()
@@ -45,13 +43,13 @@ class User
     function signOut()
     {
         session_destroy();
+        $_SESSION = array();
     }
 
     function checkPassword($login, $password)
     {
-        global $users;
         $arr = array('login' => $login, 'password' => $password);
-        return array_search($arr, $users) !== false;
+        return array_search($arr, self::$users) !== false;
     }
 
     public static function getCurrentUser()
