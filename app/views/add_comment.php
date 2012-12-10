@@ -1,5 +1,5 @@
 <h2>Add Comment</h2>
-
+             <? fdsfdas(); ?>
 <? if ($errors): ?>
 <? foreach ($errors as $error):?>
     <div class="alert">
